@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/encryptions/new', to: 'encryptions#new'
+  post '/encryptions/new', to: 'encryptions#create'
+  get '/encryptions/output', to: 'encryptions#output'
 end
