@@ -1,0 +1,7 @@
+<h1>OUTPUT</h1>
+<br>
+<h2>Your encrypted message:</h2>
+<p><%= @encryption.ciphertext %></p>
+<br>
+<p>This information is required to decrypt the message later:</p>
+<p>key: <%= @encryption.key %>  date: <%= @encryption.created_at.strftime("%m%d%y") %></p>

@@ -7,9 +7,9 @@ class Encrypt < Crypt
 
   def output
     {
-      encryption: encrypt_message,
+      ciphertext: encrypt_message,
       key: @key,
-      date: @date
+      # date: @date
     }
   end
 

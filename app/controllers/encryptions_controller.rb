@@ -4,15 +4,16 @@ class EncryptionsController < ApplicationController
   end
 
   def create
-    @output = Enigma.new.encrypt(params[:message])
-    # @output = Encrypt.new(params[:message]).output
-    redirect_to '/encryptions/output'
+    output = Enigma.new.encrypt(params[:message])
+
+    encryption = Encryption.create(output)
+    # encryption = Encryption.create(ciphertext: output[:ciphertext], key: output[:key])
+
+    redirect_to "/encryptions/#{encryption.id}"
   end
 
-  def output
-    @encryption = @output[:encryption]
-    @key = @output[:key]
-    @date = @output[:date]
+  def show
+    @encryption = Encryption.find(params[:id])
   end
 
 end
