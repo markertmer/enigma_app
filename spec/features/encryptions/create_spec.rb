@@ -13,7 +13,6 @@ RSpec.describe 'New Encryptions:', type: :feature do
     fill_in("Message", with: "hello, world" )
     click_button("ENCRYPT")
     encryption = Encryption.last
-    save_and_open_page
     expect(current_path).to eq("/encryptions/#{encryption.id}")
     expect(page).to have_content(encryption.ciphertext)
     expect(page).to have_content(encryption.key)
