@@ -40,7 +40,7 @@ describe Enigma do
   it '6. cracks a message ending in _end using just the date' do
     encrypted = @enigma.encrypt("hello, world! end")
     expected = @enigma.decrypt(encrypted[:ciphertext], encrypted[:key], encrypted[:date])[:text]
-    expect(@enigma.crack(encrypted[:ciphertext], encrypted[:date])[:text]).to eq expected
-    expect(@enigma.crack(encrypted[:ciphertext], encrypted[:date])[:key]).to eq encrypted[:key]
+    expect(@enigma.cracker(encrypted[:ciphertext], encrypted[:date])[:text]).to eq expected
+    expect(@enigma.cracker(encrypted[:ciphertext], encrypted[:date])[:key]).to eq encrypted[:key]
   end
 end
