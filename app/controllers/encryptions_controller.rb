@@ -16,4 +16,12 @@ class EncryptionsController < ApplicationController
     @encryption = Encryption.find(params[:id])
   end
 
+  def destroy
+    Encryption.find(params[:id]).destroy
+    redirect_to("/encryptions/#{params[:id]}/confirmation")
+  end
+
+  def confirmation
+    @record_number = params[:id]
+  end
 end

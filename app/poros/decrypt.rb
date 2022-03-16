@@ -7,7 +7,7 @@ class Decrypt < Crypt
 
   def output
     {
-      decryption: decrypt_ciphertext,
+      text: decrypt_ciphertext,
       key: @key,
       date: @date
     }

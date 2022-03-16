@@ -1,0 +1,9 @@
+<h1>OUTPUT</h1>
+<br>
+<h2>Your decrypted message:</h2>
+<p><%= @decryption.text %></p>
+<br>
+<p>This information was used to decrypt the message:</p>
+<p>key: <%= @decryption.key %>  date: <%= @decryption.date %></p>
+<br>
+<%= button_to "Destroy Record", "/decryptions/#{@decryption.id}", method: :delete %>

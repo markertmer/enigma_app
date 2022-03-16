@@ -96,7 +96,7 @@ describe Crack do
 
   it '12. outputs a hash' do
     expected = {
-      decryption: "hello world end",
+      text: "hello world end",
       key: "08304",
       date: "291018"
     }
@@ -110,10 +110,10 @@ describe Crack do
     date = date_string[-2..-1] + date_string[-4..-3] + date_string[-6..-5]
 
     expected = {
-      decryption: "hello, there, world; how are you doing?? end",
+      text: "hello, there, world; how are you doing?? end",
       key: "02715",
       date: date
     }
-    expect(Crack.new(encrypt[:encryption]).output).to eq expected
+    expect(Crack.new(encrypt[:ciphertext]).output).to eq expected
   end
 end

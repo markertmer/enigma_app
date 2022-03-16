@@ -63,9 +63,9 @@ describe Encrypt do
 
   it '10. outputs a hash' do
     expected = {
-      encryption: "keder ohulw",
+      ciphertext: "keder ohulw",
       key: "02715",
-      date: "040895"
+      # date: "040895"
     }
     expect(@encrypt.output).to eq expected
   end

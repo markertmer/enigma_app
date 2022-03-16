@@ -1,0 +1,11 @@
+<h1>Decrypt Your Message</h1>
+
+<%= form_with path: '/decryptions/new', method: :post, local: true do |f| %>
+  <%= f.label :message %>
+  <%= f.text_field :message, placeholder: "enter message here" %>
+  <%= f.label :key %>
+  <%= f.text_field :key, placeholder: "6 digits" %>
+  <%= f.label :date %>
+  <%= f.text_field :date, placeholder: "MMDDYY" %>
+  <%= f.submit "DECRYPT" %>
+<% end %>

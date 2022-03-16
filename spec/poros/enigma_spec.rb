@@ -11,16 +11,16 @@ describe Enigma do
 
   it '2. encrypts a message with a key and date' do
     expected = {
-      encryption: "keder ohulw",
+      ciphertext: "keder ohulw",
       key: "02715",
-      date: "040895"
+      # date: "040895"
     }
     expect(@enigma.encrypt("hello world", "02715", "040895")).to eq expected
   end
 
   it '3. decrypts a message with a key and date' do
     expected = {
-      decryption: "hello world",
+      text: "hello world",
       key: "02715",
       date: "040895"
     }
@@ -29,18 +29,18 @@ describe Enigma do
 
   it '4. encrypts and decrypts using todays date' do
     encrypted = @enigma.encrypt("hello world", "02715")
-    expect(@enigma.decrypt(encrypted[:encryption], "02715")[:decryption]).to eq "hello world"
+    expect(@enigma.decrypt(encrypted[:ciphertext], "02715")[:text]).to eq "hello world"
   end
 
   it '5. encrypts and decrypts using a random key' do
     encrypted = @enigma.encrypt("hello world")
-    expect(@enigma.decrypt(encrypted[:encryption], encrypted[:key])[:decryption]).to eq "hello world"
+    expect(@enigma.decrypt(encrypted[:ciphertext], encrypted[:key])[:text]).to eq "hello world"
   end
 
   it '6. cracks a message ending in _end using just the date' do
     encrypted = @enigma.encrypt("hello, world! end")
-    expected = @enigma.decrypt(encrypted[:encryption], encrypted[:key], encrypted[:date])[:decryption]
-    expect(@enigma.crack(encrypted[:encryption], encrypted[:date])[:decryption]).to eq expected
-    expect(@enigma.crack(encrypted[:encryption], encrypted[:date])[:key]).to eq encrypted[:key]
+    expected = @enigma.decrypt(encrypted[:ciphertext], encrypted[:key], encrypted[:date])[:text]
+    expect(@enigma.crack(encrypted[:ciphertext], encrypted[:date])[:text]).to eq expected
+    expect(@enigma.crack(encrypted[:ciphertext], encrypted[:date])[:key]).to eq encrypted[:key]
   end
 end

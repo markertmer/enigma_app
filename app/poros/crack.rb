@@ -7,7 +7,7 @@ class Crack < Crypt
 
   def output
     {
-      decryption: decrypt,
+      text: decrypt,
       key: @key,
       date: @date
     }

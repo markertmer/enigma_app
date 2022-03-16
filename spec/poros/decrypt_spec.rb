@@ -63,7 +63,7 @@ describe Decrypt do
 
   it '10. outputs a hash' do
     expected = {
-      decryption: "hello world",
+      text: "hello world",
       key: "02715",
       date: "040895"
     }

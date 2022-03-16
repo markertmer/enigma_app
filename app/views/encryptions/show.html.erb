@@ -4,4 +4,6 @@
 <p><%= @encryption.ciphertext %></p>
 <br>
 <p>This information is required to decrypt the message later:</p>
-<p>key: <%= @encryption.key %>  date: <%= @encryption.created_at.strftime("%m%d%y") %></p>
+<p>key: <%= @encryption.key %>  date: <%= @encryption.created_at.strftime("%d%m%y") %></p>
+<br>
+<%= button_to "Destroy Record", "/encryptions/#{@encryption.id}", method: :delete %>
