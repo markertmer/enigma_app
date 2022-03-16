@@ -1,5 +1,4 @@
 require 'rails_helper'
-# require 'date'
 
 RSpec.describe 'New Encryptions:', type: :feature do
 
