@@ -14,7 +14,7 @@ RSpec.describe 'New Encryptions:', type: :feature do
     click_button("CRACK THE CODE")
     crack = Crack.last
     expect(current_path).to eq("/crack/#{crack.id}")
-    expect(page).to have_content(crack.message)
+    expect(page).to have_content(crack.text)
     expect(page).to have_content("Hello, world! end")
     expect(page).to have_content(crack.key)
     expect(page).to have_content(crack.date)
