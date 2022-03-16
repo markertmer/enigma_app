@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Delete Decryptions:', type: :feature do
+RSpec.describe 'Delete Cracks:', type: :feature do
 
   before :each do
     @crack = Crack.create(text: "hello world end", key: "02715", date: "040895")
@@ -15,6 +15,6 @@ RSpec.describe 'Delete Decryptions:', type: :feature do
     visit "/cracks/#{@crack.id}"
     click_button("Destroy Record")
     expect(current_path).to eq("/cracks/#{@crack.id}/confirmation")
-    expect(page).to have_content("Crack ##{@crack.id} has been permanently deleted.")
+    expect(page).to have_content("Cracked message ##{@crack.id} has been permanently deleted.")
   end
 end

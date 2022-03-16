@@ -1,4 +1,4 @@
-class Crack < Crypt
+class Cracker < Crypt
 
   def initialize(ciphertext, date = nil)
     @ciphertext = ciphertext.downcase

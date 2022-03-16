@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   get '/decryptions/:id/confirmation', to: 'decryptions#confirmation'
   # resources :encryptions, only:[:new, :create, :show, :destroy, :confirmation]
 
-  resources :cracks, only:[:new, :create, :show, :destroy]
+  get '/cracks/new', to: 'cracks#new'
+  post '/cracks/new', to: 'cracks#create'
+  get '/cracks/:id', to: 'cracks#show'
+  delete '/cracks/:id', to: 'cracks#destroy'
   get '/cracks/:id/confirmation', to: 'cracks#confirmation'
 end
