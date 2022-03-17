@@ -4,7 +4,7 @@
 code of an encrypted message without a key! You just need to know that 1. the
 message ends in ' end' (with a space), and 2. you know the date that it was created.</p>
 
-<%= form_with path: '/cracks/new', method: :post, local: true do |f| %>
+<%= form_with path: '/cracks', method: :post, local: true do |f| %>
   <%= f.label :message %>
   <%= f.text_field :message, placeholder: "enter the encrypted message here" %>
   <%= f.label :date %>

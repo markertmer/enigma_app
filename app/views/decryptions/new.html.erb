@@ -1,6 +1,6 @@
 <h1>Decrypt Your Message</h1>
 
-<%= form_with path: '/decryptions/new', method: :post, local: true do |f| %>
+<%= form_with path: '/decryptions', method: :post, local: true do |f| %>
   <%= f.label :message %>
   <%= f.text_field :message, placeholder: "enter message here" %>
   <%= f.label :key %>
