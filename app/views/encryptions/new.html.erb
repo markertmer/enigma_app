@@ -1,6 +1,6 @@
 <h1>Encrypt Your Message</h1>
 
-<%= form_with path: '/encryptions', method: :post, local: true do |f| %>
+<%= form_with url: '/encryptions', method: :post, local: true do |f| %>
   <%= f.label :message %>
   <%= f.text_field :message, placeholder: "enter message here" %>
   <%= f.submit "ENCRYPT" %>
