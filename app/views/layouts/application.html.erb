@@ -10,6 +10,11 @@
   </head>
 
   <body>
+    <section>
+    <p><%= link_to "ENCRCYPT", "/encryptions/new" %> |
+      <%= link_to "DECRYPT", "/decryptions/new" %> |
+      <%= link_to "CRACK", "/cracks/new" %>
+    </section>
     <%= yield %>
   </body>
 </html>
