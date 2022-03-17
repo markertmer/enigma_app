@@ -1,0 +1,13 @@
+<%= form_with url: path, method: :post, local: true do |f| %>
+  <%= f.label :message %>
+  <%= f.text_field :message, placeholder: text_placeholder %>
+  <% if mode == "decrypt" %>
+    <%= f.label :key %>
+    <%= f.text_field :key, placeholder: "6-digit key" %>
+  <% end %>
+  <% if mode == "crack" || mode == "decrypt" %>
+    <%= f.label :date %>
+    <%= f.text_field :date, placeholder: "MMDDYY" %>
+  <% end %>
+  <%= f.submit button_text %>
+<% end %>

@@ -2,12 +2,12 @@
 <br>
 <p>Through the power of COMPUTER TECHNOLOGY, it has become possible to crack the
 code of an encrypted message without a key! You just need to know that 1. the
-message ends in ' end' (with a space), and 2. you know the date that it was created.</p>
+message ends in " end" (with a space), and 2. you know the date that it was created.</p>
 
-<%= form_with url: '/cracks', method: :post, local: true do |f| %>
-  <%= f.label :message %>
-  <%= f.text_field :message, placeholder: "enter the encrypted message here" %>
-  <%= f.label :date %>
-  <%= f.text_field :date, placeholder: "MMDDYY" %>
-  <%= f.submit "CRACK THE CODE" %>
-<% end %>
+<%= render partial: "shared/new_form", locals: {
+                                                path: '/cracks',
+                                                text_placeholder: "enter the encrypted message here",
+                                                button_text: "CRACK THE CODE",
+                                                mode: "crack"
+                                              }
+%>
