@@ -4,12 +4,16 @@ class DecryptionsController < ApplicationController
   end
 
   def create
-    output = Enigma.new.decrypt(params[:message], params[:key], params[:date])
+    decryption = Decryption.new(message: params[:message], key: params[:key], date: params[:date])
 
-    decryption = Decryption.create(output)
-    # encryption = Encryption.create(ciphertext: output[:ciphertext], key: output[:key])
-
-    redirect_to "/decryptions/#{decryption.id}"
+    if decryption.save
+      output = Enigma.new.decrypt(params[:message], params[:key], params[:date])
+      decryption.update(output)
+      redirect_to "/decryptions/#{decryption.id}"
+    else
+      redirect_to "/decryptions/new"
+      flash[:alert] = "ERROR: #{error_message(decryption.errors)}"
+    end
   end
 
   def show

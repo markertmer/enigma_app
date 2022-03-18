@@ -4,12 +4,16 @@ class EncryptionsController < ApplicationController
   end
 
   def create
-    output = Enigma.new.encrypt(params[:message])
+    encryption = Encryption.new(message: params[:message])
 
-    encryption = Encryption.create(output)
-    # encryption = Encryption.create(ciphertext: output[:ciphertext], key: output[:key])
-
-    redirect_to "/encryptions/#{encryption.id}"
+    if encryption.save
+      output = Enigma.new.encrypt(params[:message])
+      encryption.update(output)
+      redirect_to "/encryptions/#{encryption.id}"
+    else
+      redirect_to "/encryptions/new"
+      flash[:alert] = "ERROR: #{error_message(encryption.errors)}"
+    end
   end
 
   def show

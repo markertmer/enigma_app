@@ -4,10 +4,16 @@ class CracksController < ApplicationController
   end
 
   def create
-    output = Enigma.new.cracker(params[:message], params[:date])
-    crack = Crack.create(output)
+    crack = Crack.new(message: params[:message], date: params[:date])
 
-    redirect_to "/cracks/#{crack.id}"
+    if crack.save
+      output = Enigma.new.cracker(params[:message], params[:date])
+      crack.update(output)
+      redirect_to "/cracks/#{crack.id}"
+    else
+      redirect_to "/cracks/new"
+      flash[:alert] = "ERROR: #{error_message(crack.errors)}"
+    end
   end
 
   def show

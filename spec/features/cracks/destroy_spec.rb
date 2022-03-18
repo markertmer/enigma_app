@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Delete Cracks:', type: :feature do
 
   before :each do
-    @crack = Crack.create(text: "hello world end", key: "02715", date: "040895")
+    @crack = Crack.create(text: "hello world end", key: "02715", date: "040895", message: "whatever")
   end
 
   it 'has a button to delete from the show page' do

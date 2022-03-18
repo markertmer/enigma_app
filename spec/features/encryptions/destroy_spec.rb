@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Delete Encryptions:', type: :feature do
 
   before :each do
-    @encryption = Encryption.create(ciphertext: "keder ohulw", key: "02715")
+    @encryption = Encryption.create(ciphertext: "keder ohulw", key: "02715", message: "whatever")
   end
 
   it 'has a button to delete from the show page' do
