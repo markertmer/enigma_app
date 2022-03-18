@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_16_220013) do
+ActiveRecord::Schema.define(version: 2022_03_18_030110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,12 +19,14 @@ ActiveRecord::Schema.define(version: 2022_03_16_220013) do
     t.string "text"
     t.string "key"
     t.string "date"
+    t.string "message"
   end
 
   create_table "decryptions", force: :cascade do |t|
     t.string "text"
     t.string "key"
     t.string "date"
+    t.string "message"
   end
 
   create_table "encryptions", force: :cascade do |t|
@@ -32,6 +34,7 @@ ActiveRecord::Schema.define(version: 2022_03_16_220013) do
     t.string "key"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "message"
   end
 
 end
