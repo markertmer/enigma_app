@@ -3,11 +3,11 @@
   <%= f.text_field :message, placeholder: text_placeholder %>
   <% if mode == "decrypt" %>
     <%= f.label :key %>
-    <%= f.text_field :key, placeholder: "6-digit key" %>
+    <%= f.text_field :key, placeholder: "5 digits" %>
   <% end %>
   <% if mode == "crack" || mode == "decrypt" %>
     <%= f.label :date %>
-    <%= f.text_field :date, placeholder: "MMDDYY" %>
+    <%= f.text_field :date, placeholder: "DDMMYY", "data-provide" => 'datepicker' %>
   <% end %>
   <%= f.submit button_text %>
 <% end %>
