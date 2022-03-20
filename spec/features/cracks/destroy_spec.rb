@@ -6,12 +6,12 @@ RSpec.describe 'Delete Cracks:', type: :feature do
     @crack = Crack.create(text: "hello world end", key: "02715", date: "040895", message: "whatever")
   end
 
-  it 'has a button to delete from the show page' do
+  xit 'has a button to delete from the show page' do
     visit "/cracks/#{@crack.id}"
     expect(page).to have_button("Destroy Record")
   end
 
-  it 'deletes the record' do
+  xit 'deletes the record' do
     visit "/cracks/#{@crack.id}"
     click_button("Destroy Record")
     expect(current_path).to eq("/cracks/#{@crack.id}/confirmation")

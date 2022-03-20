@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe 'New Cracks:', type: :feature do
 
-  it 'has a page for new cracks' do
+  xit 'has a page for new cracks' do
     visit '/cracks/new'
     expect(page).to have_content("Crack An Encrypted Message")
   end
 
-  it 'cracks a message' do
+  xit 'cracks a message' do
     visit '/cracks/new'
     fill_in("Message", with: "z nof,vyrigf!cwif" )
     fill_in("Date", with: "160322")

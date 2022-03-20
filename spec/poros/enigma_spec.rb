@@ -1,4 +1,4 @@
-require './spec/poros/spec_helper.rb'
+require './spec/poros/poros_helper.rb'
 
 describe Enigma do
   before(:each) do
