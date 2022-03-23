@@ -1,7 +1,7 @@
 <%= form_with url: path, method: :post, local: true do |f| %>
   <%= f.label :message %>
   <%= f.text_field :message, placeholder: text_placeholder %>
-  <% if mode == "decrypt" %>
+  <% if mode == "encrypt" || mode == "decrypt" %>
     <%= f.label :key %>
     <%= f.text_field :key, placeholder: "5 digits" %>
   <% end %>
@@ -10,4 +10,4 @@
     <%= f.text_field :date, placeholder: "DDMMYY", "data-provide" => 'datepicker' %>
   <% end %>
   <%= f.submit button_text %>
-<% end %> 
+<% end %>
