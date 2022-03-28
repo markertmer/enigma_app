@@ -1,0 +1,26 @@
+<h1>Welcome to ENIGMA</h1>
+<p>This application allows you to encrypt a message so that only the intended
+reader can decipher it.</p>
+<br>
+<h2>Getting Started</h2>
+<ol>
+  <li>Click the "ENCRYPT" link above to create an encrypted message.</li>
+  <li>Enter your message (up to 500 characters) in the provided field.</li>
+  <li>You may enter your own 5-digit key if you wish, or leave the field
+    blank to have the program generate a random one.</li>
+  <li>The program will output your encrypted message along with a 5-digit key
+    and 6-digit date code. This information will be needed to decrypt the
+    message later.</li>
+  <li>Pass the encrypted message to the intended recipient, and send them the
+    key in a separate communication. You may also need to send them the date if
+    your message was encrypted on a different day than when you sent it.</li>
+  <li>The recipient can then use the "DECRYPT" link above to decipher the
+    message, along with the provided key and date.</li>
+  <li>To ensure that no information is saved in the database, click the button
+    to destroy the record after each new encryption or decryption. You will
+    still be able to decipher messages as long as you retain the key and
+    date.</li>
+</ol>
+<br>
+<p><%= link_to "CLICK HERE", "https://github.com/markertmer/enigma" %> for more
+  information on this project.</p>

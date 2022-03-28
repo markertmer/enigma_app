@@ -12,7 +12,6 @@ RSpec.describe 'New Encryptions:', type: :feature do
       fill_in("Message", with: "hello, world" )
       click_button("ENCRYPT")
       encryption = Encryption.last
-      binding.pry
       expect(current_path).to eq("/encryptions/#{encryption.id}")
       expect(page).to have_content(encryption.ciphertext)
       expect(page).to have_content(encryption.key)
@@ -62,6 +61,5 @@ RSpec.describe 'New Encryptions:', type: :feature do
       expect(current_path).to eq("/encryptions/new")
       expect(page).to have_content("Key should not have spaces")
     end
-
   end
 end

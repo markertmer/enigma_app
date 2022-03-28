@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/', to: 'welcome#index'
+
   resources :encryptions, only: [:create, :new, :show, :destroy]
   get '/encryptions/:id/confirmation', to: 'encryptions#confirmation'
 
