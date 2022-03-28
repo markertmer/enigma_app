@@ -4,7 +4,9 @@ class Decryption < ApplicationRecord
   validates :key, presence: true
   validates :key, numericality: true
   validates :key, length: { is: 5 }
+  validates :key, format: { without: /\s/, message: "should not have spaces" }
   validates :date, presence: true
   validates :date, numericality: true
   validates :date, length: { is: 6 }
+  validates :date, format: { without: /\s/, message: "should not have spaces" }
 end

@@ -7,8 +7,10 @@ RSpec.describe Decryption, type: :model do
     it { should validate_presence_of(:key) }
     it { should validate_numericality_of(:key) }
     it { should validate_length_of(:key).is_equal_to(5) }
+    it { should_not allow_value(" ").for(:key) }
     it { should validate_presence_of(:date) }
     it { should validate_numericality_of(:date) }
     it { should validate_length_of(:date).is_equal_to(6) }
+    it { should_not allow_value(" ").for(:date) }
   end
 end
