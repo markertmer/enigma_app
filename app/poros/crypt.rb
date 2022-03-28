@@ -16,10 +16,10 @@ class Crypt
   def initialize(key, date)
     generate_characters
     assign_date(date)
-    assign_key(key) unless self.class == Crack
-    generate_shift_keys unless self.class == Crack
-    generate_offsets unless self.class == Crack
-    generate_shifts unless self.class == Crack
+    assign_key(key) unless self.class == Cracker
+    generate_shift_keys unless self.class == Cracker
+    generate_offsets unless self.class == Cracker
+    generate_shifts unless self.class == Cracker
   end
 
   def assign_date(date)
