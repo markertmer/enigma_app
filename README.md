@@ -1,24 +1,3 @@
-# README
+This is a Rails app version of the command-line tool created for [this original project](https://github.com/markertmer/enigma).
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Please visit that repo for more complete information about the program and how it works.
