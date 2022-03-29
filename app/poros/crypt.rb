@@ -32,7 +32,7 @@ class Crypt
   end
 
   def assign_key(key)
-    key == nil ? @key = random_key : @key = key
+    key == nil || key == "" ? @key = random_key : @key = key
   end
 
   def random_key
